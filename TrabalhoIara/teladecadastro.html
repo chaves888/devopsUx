@@ -1,0 +1,96 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="devopsUx.png" alt="Gazin Tech Logo">
+        </div>
+        <div class="form-container">
+            <h2>Cadastro de Usuário</h2>
+            <form id="cadastroForm">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <label for="nomeCompleto">Nome Completo:</label>
+                    <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Digite seu nome completo" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user-circle"></i>
+                    <label for="nomeUsuario">Usuário:</label>
+                    <input type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Digite seu nome de usuário" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('senha', 'toggleSenha')">
+                        <i class="far fa-eye" id="toggleSenha"></i>
+                    </span>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <label for="confirmSenha">Confirme Senha:</label>
+                    <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('confirmSenha', 'toggleConfirmSenha')">
+                        <i class="far fa-eye" id="toggleConfirmSenha"></i>
+                    </span>
+                </div>
+                <div class="button-group">
+                    <button type="button" id="voltarInicio">Voltar ao Início</button>
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const senha = document.getElementById('senha').value;
+            const confirmSenha = document.getElementById('confirmSenha').value;
+
+            // Verifica se as senhas coincidem
+            if (senha !== confirmSenha) {
+                alert('As senhas não coincidem. Por favor, tente novamente.');
+                return;
+            }
+
+            // Verifica se a senha tem mais de 8 caracteres e contém pelo menos um caractere especial
+            if (senha.length < 8 || !/[!@#$%^&*(),.?":{}|<>]/.test(senha)) {
+                alert('A senha deve ter pelo menos 8 caracteres e conter pelo menos um caractere especial.');
+                return;
+            }
+
+            // Simula o envio do formulário (você pode substituir isso com o envio real do formulário)
+            alert('Cadastro enviado com sucesso!');
+        });
+
+        function togglePasswordVisibility(inputId, eyeIconId) {
+            const input = document.getElementById(inputId);
+            const eyeIcon = document.getElementById(eyeIconId);
+
+            if (input.type === "password") {
+                input.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</body>
+</html>

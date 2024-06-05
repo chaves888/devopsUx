@@ -1,0 +1,124 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #a0a3cb; /* Cor de fundo alterada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #e8e8e8, #00098b);
+}
+
+.container {
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    top: -100px; /* Ajuste para posicionar acima da palavra "Cadastro" */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-container img {
+    max-width: 240px;
+    margin-top: -100px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9fa5cd; /* Cor de fundo do formulário */
+    border-radius: 54px; /* Bordas suaves */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #333;
+    font-size: 1.5em;
+}
+
+form {
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.input-group i {
+    font-size: 16px; /* Altere o tamanho da fonte para diminuir os ícones */
+    color: #555;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 16px;
+}
+
+.label-container {
+    display: flex;
+    align-items: center;
+    width: 90px; /* Adicione esta linha */
+}
+
+label {
+    margin-right: 10px;
+    font-weight: 500;
+    color: #555;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+input {
+    width: calc(100% - 60px); /* Altere esta linha */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f0f0f0;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+input:focus {
+    border-color: #007bff;
+    background-color: #e6e6e6;
+}
+
+.button-group {
+    text-align: center
+}
+
+button {
+    margin-left: 10px; /* Adicione esta linha */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
